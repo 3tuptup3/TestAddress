@@ -33,12 +33,6 @@ public class AddressListController {
 			@ModelAttribute AddressSearchForm form,
 			Model model) {
 		
-//		// テストデータ
-//		List<Address> list = new ArrayList<Address>();
-//		list.add(new Address(1, "附田", "瑞穂", "みさん", "無職"));
-//		list.add(new Address(2, "附田", "高成", "こせさん", "会社員"));
-//		list.add(new Address(3, "附田", "真宙", "まひたん", "赤ん坊"));
-		
 		List<Address> list = service.findByNameWildcard(form.getLastName());
 		
 		model.addAttribute("addressList", list);
