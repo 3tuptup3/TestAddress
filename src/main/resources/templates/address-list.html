@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>個人情報一覧</title>
+</head>
+<body>
+	
+<h2>個人情報検索</h2>
+<form th:action="@{/address-search}" method="POST" th:object="${addressSearchForm}">
+	【姓】（部分一致）<br>
+	<!-- 前回の検索条件がそのまま表示される -->
+   	<input type="text" th:field="*{lastName}"><br>
+	<br>
+   	<input type="submit" value="検索" class="btn"><br>
+</form>
+
+
+<form th:action="@{/show-address-form}" method="POST">
+	<input type="submit" value="新規登録" class="btn"><br>
+</form>
+
+<!-- ifの内容がTrueの場合divが有効になる -->
+<div th:if="${addressList} != null">
+	<h2>一覧</h2>
+
+	<table class="address-list">
+		<tr>
+			<th>詳細</th><th>姓</th><th>名</th><th>通名</th><th>所属</th>
+		</tr>
+		
+		<!-- th:each リストの要素を1つずつ取り出す -->
+		<tr th:each="address : ${addressList}"><td>
+				<form th:action="@{/address-detail}" method="POST">
+					<input type="hidden" name="addressId" th:value="${address.addressId}">
+					<input type="hidden" name="lastName" th:value="${address.lastName}">
+					<input type="hidden" name="firstName" th:value="${address.firstName}">
+					<input type="hidden" name="commonName" th:value="${address.commonName}">
+					<input type="hidden" name="team" th:value="${address.team}">
+					<input type="submit" value="詳細" class="tbtn">
+				</form>
+			</td>
+			<td th:text="${address.lastName}"></td>
+			<td th:text="${address.firstName}"></td>
+			<td th:text="${address.commonName}"></td>
+			<td th:text="${address.team}"></td>
+		</tr>
+
+	</table>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>更新</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+	<h2>更新</h2>
+
+    <form th:action="@{/edit-address}" method="POST" 
+    		th:object="${addressEditForm}">
+		<input type="hidden" name="addressId" th:value="*{addressId}">
+    	【姓】<br>
+    	<input type="text" th:field="*{lastName}"><br>
+    	<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>
+		<br>
+    	【名】<br>
+    	<input type="text" th:field="*{firstName}"><br>
+    	<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>
+		<br>
+    	【通名】<br>
+    	<input type="text" th:field="*{commonName}" class="commonName" ><br>
+    	<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>
+		<br>
+    	【所属】<br>
+    	<input type="text" th:field="*{team}" class="team" ><br>
+    	<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>
+		<br>
+    	<input type="submit" value="更新" class="btn">
+    </form>
+    
+    <br>
+    <a th:href="@{/top}">トップページに戻る</a>
+
+</body>
+</html>

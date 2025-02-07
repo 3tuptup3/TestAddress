@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>削除確認</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+		
+	<h2>削除確認</h2>
+
+	<table class="confirm-table" th:object="${addressRemoveForm}">
+		<tr>
+			<td class="guide">【姓】</td>
+			<td th:text="*{lastName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【名】</td>
+			<td th:text="*{firstName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【通名】</td>
+			<td th:text="*{commonName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【所属】</td>
+			<td th:text="*{team}"></td>
+		</tr>
+	</table>	
+
+    <form th:action="@{/confirm-remove-address}" method="POST"
+			th:object="${addressRemoveForm}">
+    	<input type="hidden" th:field="*{addressId}">
+    	<input type="hidden" th:field="*{lastName}">
+    	<input type="hidden" th:field="*{firstName}">
+    	<input type="hidden" th:field="*{commonName}">
+    	<input type="hidden" th:field="*{team}">
+    	<input type="submit" value="削除実行" class="btn">
+   	</form>
+
+    <form th:action="@{/show-address-remove-form-ret}" method="POST"
+			th:object="${addressRemoveForm}">
+    	<input type="hidden" th:field="*{addressId}">
+    	<input type="hidden" th:field="*{lastName}">
+    	<input type="hidden" th:field="*{firstName}">
+    	<input type="hidden" th:field="*{commonName}">
+    	<input type="hidden" th:field="*{team}">
+<!--    	<input type="hidden" th:field="*{comment}" class="btn">-->
+    	<input type="submit" value="もどる" class="btn">
+   	</form>
+
+</body>
+</html>

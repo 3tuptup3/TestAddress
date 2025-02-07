@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>個人情報詳細</title>
+</head>
+<body>
+<h2>個人情報詳細</h2>
+
+<div th:object="${addressDetailForm}">
+【姓】<a th:text="*{lastName}"></a><br>
+【名】<a th:text="*{firstName}"></a><br>
+【通名】<a th:text="*{commonName}"></a><br>
+【所属】<a th:text="*{team}"></a><br>
+<!--</div>-->
+<form th:action="@{/show-address-edit-form}" method="POST">
+	<input type="hidden" name="addressId" th:value="*{addressId}">
+	<input type="hidden" name="lastName" th:value="*{lastName}">
+	<input type="hidden" name="firstName" th:value="*{firstName}">
+	<input type="hidden" name="commonName" th:value="*{commonName}">
+	<input type="hidden" name="team" th:value="*{team}">
+	<input type="submit" value="編集" class="tbtn">
+</form>
+<form th:action="@{/remove-address}" method="POST">
+	<input type="hidden" name="addressId" th:value="*{addressId}">
+	<input type="hidden" name="lastName" th:value="*{lastName}">
+	<input type="hidden" name="firstName" th:value="*{firstName}">
+	<input type="hidden" name="commonName" th:value="*{commonName}">
+	<input type="hidden" name="team" th:value="*{team}">
+	<input type="submit" value="削除" class="tbtn">
+</form>
+</div>
+</body>
+</html>
