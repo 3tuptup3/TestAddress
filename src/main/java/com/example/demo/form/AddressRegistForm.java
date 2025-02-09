@@ -62,7 +62,7 @@ public class AddressRegistForm {
 	private String remarks;
 	
 
-    @AssertTrue(message="姓、名、通名、所属のいずれかは必須項目です。")
+    @AssertTrue(message="姓、名、通名のいずれかは必須項目です。")
     public boolean isNameEmpty(){
 //        if ((lastName == "" ) && 
 //        		firstName == "" &&
@@ -70,8 +70,7 @@ public class AddressRegistForm {
 //        		team == "") {
         if (StringUtils.isEmpty(lastName) && 
         		StringUtils.isEmpty(firstName) &&
-        		StringUtils.isEmpty(commonName) &&
-        		StringUtils.isEmpty(team)) {
+        		StringUtils.isEmpty(commonName)) {
             return false;
         }
         return true;
