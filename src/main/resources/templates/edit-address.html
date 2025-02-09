@@ -2,36 +2,306 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>更新</title>
+<title>連絡先編集</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-	<h2>更新</h2>
-
+	<h2>連絡先編集</h2><form th:action="@{/edit-address}" method="POST">
     <form th:action="@{/edit-address}" method="POST" 
     		th:object="${addressEditForm}">
 		<input type="hidden" name="addressId" th:value="*{addressId}">
-    	【姓】<br>
-    	<input type="text" th:field="*{lastName}"><br>
-    	<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>
-		<br>
-    	【名】<br>
-    	<input type="text" th:field="*{firstName}"><br>
-    	<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>
-		<br>
-    	【通名】<br>
-    	<input type="text" th:field="*{commonName}" class="commonName" ><br>
-    	<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>
-		<br>
-    	【所属】<br>
-    	<input type="text" th:field="*{team}" class="team" ><br>
-    	<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>
+		<table class="edit-table" th:object="${addressEditForm}">
+			<tr>
+				<td class="guide">姓</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{lastName}"><br>
+		    		<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">ミドルネーム</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{middleName}"><br>
+		    		<div th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">名</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{firstName}"><br>
+		    		<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">旧姓</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{maidenName}"><br>
+		    		<div th:if="${#fields.hasErrors('maidenName')}" th:errors="*{maidenName}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">通名</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{commonName}"><br>
+		    		<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">姓（かな）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{lastNameKana}"><br>
+		    		<div th:if="${#fields.hasErrors('lastNameKana')}" th:errors="*{lastNameKana}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">ミドルネーム（かな）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{middleNameKana}"><br>
+		    		<div th:if="${#fields.hasErrors('middleNameKana')}" th:errors="*{middleNameKana}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">名（かな）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{firstNameKana}"><br>
+		    		<div th:if="${#fields.hasErrors('firstNameKana')}" th:errors="*{firstNameKana}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">旧姓（かな）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{maidenNameKana}"><br>
+		    		<div th:if="${#fields.hasErrors('maidenNameKana')}" th:errors="*{maidenNameKana}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">通名（かな）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{commonNameKana}"><br>
+		    		<div th:if="${#fields.hasErrors('commonNameKana')}" th:errors="*{commonNameKana}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">電話番号1</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{phoneNumber1}"><br>
+		    		<div th:if="${#fields.hasErrors('phoneNumber1')}" th:errors="*{phoneNumber1}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">電話番号2</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{phoneNumber2}"><br>
+		    		<div th:if="${#fields.hasErrors('phoneNumber2')}" th:errors="*{phoneNumber2}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">メールアドレス1</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{eMail1}"><br>
+		    		<div th:if="${#fields.hasErrors('eMail1')}" th:errors="*{eMail1}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">メールアドレス2</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{eMail2}"><br>
+		    		<div th:if="${#fields.hasErrors('eMail2')}" th:errors="*{eMail2}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">郵便番号</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{postCode}"><br>
+		    		<div th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">住所</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{address}"><br>
+		    		<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">所属</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{team}"><br>
+		    		<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">生年月日（年）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{birthYear}"><br>
+		    		<div th:if="${#fields.hasErrors('birthYear')}" th:errors="*{birthYear}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">生年月日（月）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{birthMonth}"><br>
+		    		<div th:if="${#fields.hasErrors('birthMonth')}" th:errors="*{birthMonth}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">生年月日（日）</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{birthDay}"><br>
+		    		<div th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}" class="error-msg"></div>
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">備考</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{remarks}"><br>
+		    		<div th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}" class="error-msg"></div>
+	    		</td>
+			</tr>
+		</table>
 		<br>
     	<input type="submit" value="更新" class="btn">
-    </form>
+	</form>
+
+<!--    <form th:action="@{/edit-address}" method="POST" -->
+<!--    		th:object="${addressEditForm}">-->
+<!--		<input type="hidden" name="addressId" th:value="*{addressId}">-->
+<!--		姓-->
+<!--    	<input type="text" th:field="*{lastName}"><br>-->
+<!--    	<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	ミドルネーム-->
+<!--    	<input type="text" th:field="*{middleName}"><br>-->
+<!--    	<div th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	名-->
+<!--    	<input type="text" th:field="*{firstName}"><br>-->
+<!--    	<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	旧姓-->
+<!--    	<input type="text" th:field="*{maidenName}"><br>-->
+<!--    	<div th:if="${#fields.hasErrors('maidenName')}" th:errors="*{maidenName}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	通名-->
+<!--    	<input type="text" th:field="*{commonName}" class="commonName" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	姓（かな）-->
+<!--    	<input type="text" th:field="*{lastNameKana}" class="lastNameKana" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('lastNameKana')}" th:errors="*{lastNameKana}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	ミドルネーム（かな）-->
+<!--    	<input type="text" th:field="*{middleNameKana}" class="middleNameKana" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('middleNameKana')}" th:errors="*{middleNameKana}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	名（かな）-->
+<!--    	<input type="text" th:field="*{firstNameKana}" class="firstNameKana" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('firstNameKana')}" th:errors="*{firstNameKana}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	旧姓（かな）-->
+<!--    	<input type="text" th:field="*{maidenNameKana}" class="maidenNameKana" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('maidenNameKana')}" th:errors="*{maidenNameKana}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	通名（かな）-->
+<!--    	<input type="text" th:field="*{commonNameKana}" class="commonNameKana" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('commonNameKana')}" th:errors="*{commonNameKana}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	電話番号1-->
+<!--    	<input type="text" th:field="*{phoneNumber1}" class="phoneNumber1" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('phoneNumber1')}" th:errors="*{phoneNumber1}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	電話番号2-->
+<!--    	<input type="text" th:field="*{phoneNumber2}" class="phoneNumber2" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('phoneNumber2')}" th:errors="*{phoneNumber2}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	メールアドレス1-->
+<!--    	<input type="text" th:field="*{eMail1}" class="eMail1" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('eMail1')}" th:errors="*{eMail1}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	メールアドレス2-->
+<!--    	<input type="text" th:field="*{eMail2}" class="eMail2" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('eMail2')}" th:errors="*{eMail2}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	郵便番号-->
+<!--    	<input type="text" th:field="*{postCode}" class="postCode" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	住所-->
+<!--    	<input type="text" th:field="*{address}" class="address" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	所属-->
+<!--    	<input type="text" th:field="*{team}" class="team" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	生年月日-->
+<!--    	<input type="text" th:field="*{birthYear}" class="birthYear" >年<br>-->
+<!--    	<div th:if="${#fields.hasErrors('birthYear')}" th:errors="*{tebirthYearam}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	<input type="text" th:field="*{birthMonth}" class="birthMonth" >月<br>-->
+<!--    	<div th:if="${#fields.hasErrors('birthMonth')}" th:errors="*{birthMonth}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	<input type="text" th:field="*{birthDay}" class="birthDay" >日<br>-->
+<!--    	<div th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	備考-->
+<!--    	<input type="text" th:field="*{remarks}" class="remarks" ><br>-->
+<!--    	<div th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}" class="error-msg"></div>-->
+<!--		<br>-->
+<!--    	<input type="submit" value="更新" class="btn">-->
+<!--    </form>-->
     
     <br>
+    <form th:action="@{/address-detail}" method="POST"
+			th:object="${addressEditForm}">
+		<input type="hidden" name="addressId" th:value="*{addressId}">
+		<input type="hidden" name="lastName" th:value="*{lastName}">
+		<input type="hidden" name="middleName" th:value="*{middleName}">
+		<input type="hidden" name="firstName" th:value="*{firstName}">
+		<input type="hidden" name="maidenName" th:value="*{maidenName}">
+		<input type="hidden" name="commonName" th:value="*{commonName}">
+		<input type="hidden" name="lastNameKana" th:value="*{lastNameKana}">
+		<input type="hidden" name="middleNameKana" th:value="*{middleNameKana}">
+		<input type="hidden" name="firstNameKana" th:value="*{firstNameKana}">
+		<input type="hidden" name="maidenNameKana" th:value="*{maidenNameKana}">
+		<input type="hidden" name="commonNameKana" th:value="*{commonNameKana}">
+		<input type="hidden" name="category1" th:value="*{category1}">
+		<input type="hidden" name="phoneNumber1" th:value="*{phoneNumber1}">
+		<input type="hidden" name="phoneNumber2" th:value="*{phoneNumber2}">
+		<input type="hidden" name="eMail1" th:value="*{eMail1}">
+		<input type="hidden" name="eMail2" th:value="*{eMail2}">
+		<input type="hidden" name="postCode" th:value="*{postCode}">
+		<input type="hidden" name="address" th:value="*{address}">
+		<input type="hidden" name="team" th:value="*{team}">
+		<input type="hidden" name="birthYear" th:value="*{birthYear}">
+		<input type="hidden" name="birthMonth" th:value="*{birthMonth}">
+		<input type="hidden" name="birthDay" th:value="*{birthDay}">
+		<input type="hidden" name="remarks" th:value="*{remarks}">
+    	<input type="submit" value="詳細画面にもどる" class="btn">
+   	</form>
+<!--    <a th:href="@{/address-detail}">詳細画面に戻る</a>-->
     <a th:href="@{/top}">トップページに戻る</a>
 
 </body>

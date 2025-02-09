@@ -25,13 +25,13 @@ public class RegistController {
 		return "regist-address";
 	}
 
-	/*--- 登録画面表示リクエスト（確認画面からの戻り） ---*/
+	/*--- 登録画面表示リクエスト（登録確認画面からの戻り） ---*/
 	@PostMapping("/show-address-form-ret")
 	public String showAddressFormRet(@ModelAttribute AddressRegistForm form) {
 		return "regist-address";
 	}
 
-	/*--- 登録リクエスト（登録画面より） ---*/
+	/*--- 登録確認画面表示リクエスト ---*/
 	// ！！バリデーション！！
 	// 開発者ツールからの変更もエラーになる
 	// @Validatedで入力内容と検証結果をaddressRegistFormモデルに格納
@@ -63,9 +63,26 @@ public class RegistController {
 
 		Address a = new Address();
 		a.setLastName(form.getLastName());
+		a.setMiddleName(form.getMiddleName());
 		a.setFirstName(form.getFirstName());
+		a.setMaidenName(form.getMaidenName());
 		a.setCommonName(form.getCommonName());
+		a.setLastNameKana(form.getLastNameKana());
+		a.setMiddleNameKana(form.getMiddleNameKana());
+		a.setFirstNameKana(form.getFirstNameKana());
+		a.setMaidenNameKana(form.getMaidenNameKana());
+		a.setCommonNameKana(form.getCommonNameKana());
+		a.setPhoneNumber1(form.getPhoneNumber1());
+		a.setPhoneNumber2(form.getPhoneNumber2());
+		a.setEMail1(form.getEMail1());
+		a.setEMail2(form.getEMail2());
+		a.setPostCode(form.getPostCode());
+		a.setAddress(form.getAddress());
 		a.setTeam(form.getTeam());
+		a.setBirthYear(form.getBirthYear());
+		a.setBirthMonth(form.getBirthMonth());
+		a.setBirthDay(form.getBirthDay());
+		a.setRemarks(form.getRemarks());
 		service.regist(a);
 
 		// フラッシュスコープ

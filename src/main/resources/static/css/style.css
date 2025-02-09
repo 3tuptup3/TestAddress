@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+body {
+	font-family: BIZ UDPゴシック;
+	background-color: #f3ffbd;
+	text-align: center;
+}
+
+h1 {
+	font-size: 32px;
+    color: #247ba0;
+	text-align: center;
+}
+
+h2 {
+	font-size: 28px;
+	background-color: #247ba0;
+	color: white;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	text-align: center;
+}
+
+/* 通常のボタン */
+/*.btn {*/
+/*	border: 2px solid #247ba0;*/
+/*	padding: 4px 20px;*/
+/*	font-size: 20px;*/
+/*	color: #247ba0;*/
+/*	cursor:pointer;*/
+/*}*/
+
+/*.btn:hover {*/
+/*  color: #fff;*/
+/*  background: #247ba0;*/
+/*}*/
+
+.error-msg {
+    color: red;
+}
+
+/*table {*/
+/*	border: 1px solid #5e696c;*/
+/*	margin-left: auto;*/
+/*	margin-right: auto;*/
+/*	width: 80%; 					 テーブル横幅 */
+/*	border-collapse:  collapse; 	 境界線を共有 */
+/*}*/
+
+/*th {*/
+/*	border: 1px solid #5e696c;*/
+/*    text-align:center;*/
+/*    background-color: #3cb371;*/
+/*    height: 32px;*/
+/*}*/
+
+/*td {*/
+/*	border: 1px solid #5e696c;*/
+/*	text-align: center;*/
+/*	height: 24px;*/
+/*}*/
+
+/*class属性が指定されたHTML要素に適用される*/
+.address-list {
+	border: 1px solid #5e696c;
+    background-color: #eee8aa;
+	border-collapse:  collapse; 	 /* 境界線を共有 */
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.address-list th {
+	border: 1px solid #5e696c;
+    background-color: #70c1b3;
+/*    text-align:left;*/
+	text-align: center;
+}
+
+.address-list td {
+	border: 1px solid #5e696c;
+    text-align:left;
+}
+
+/*ここから追加*/
+/* テーブル内ボタン */
+/*.tbtn {*/
+/*	border: 2px solid steelblue;*/
+/*	padding: 2px 10px;*/
+/*	font-size: 16px;*/
+/*	color: steelblue;*/
+/*	cursor:pointer;*/
+/*}*/
+
+/*.tbtn:hover {*/
+/*  color: #fff;*/
+/*  background: steelblue;*/
+/*}*/
+
+.detail-table {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.detail-table td {
+	text-align: left;
+}
+
+.regist-table {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.regist-table td {
+	text-align: left;
+}
+
+.edit-table {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.edit-table td {
+	text-align: left;
+}
+
+/* 確認画面用 */
+.confirm-table {
+	border: 1px solid #5e696c;
+/*    background-color: #e5d8e8;*/
+    background-color: #b2dbbf;
+	width: 50%; 					/* テーブル横幅 */
+	border-collapse:  collapse; 	 /* 境界線を共有 */
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.confirm-table .guide {
+	width: 30%; 					/* ガイド横幅 */
+}
+
+.confirm-table th {
+/*	border: 1px solid #5e696c;*/
+/*    text-align:left;*/
+	text-align: center;
+}
+
+.confirm-table td {
+	border: 1px solid #5e696c;
+    text-align:left;
+}
+

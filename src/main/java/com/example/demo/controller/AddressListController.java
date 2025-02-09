@@ -33,7 +33,8 @@ public class AddressListController {
 			@ModelAttribute AddressSearchForm form,
 			Model model) {
 		
-		List<Address> list = service.findByNameWildcard(form.getLastName());
+//		List<Address> list = service.findByNameWildcard(form.getLastName());
+		List<Address> list = service.findByNameWildcard(form);
 		
 		model.addAttribute("addressList", list);
 		
@@ -48,10 +49,25 @@ public class AddressListController {
 
 //		List<Address> list = service.findByAddressId(form.getAddressId());
 //		
-//		// →review-list.html
-//		// 		th:if="${reviewList} == null"
+//		// →address-list.html
+//		// 		th:if="${addressList} == null"
 //		if (list.size() > 0) {
-//			model.addAttribute("reviewList", list);
+//			model.addAttribute("addressList", list);
+//		}
+		return "address-detail";
+	}
+	
+	/*--- 詳細画面表示リクエスト（編集/削除確認画面からの戻り） ---*/
+	@PostMapping("/address-detail-ret")
+	private String addressDetailRet(
+			@ModelAttribute AddressDetailForm form) {
+
+//		List<Address> list = service.findByAddressId(form.getAddressId());
+//		
+//		// →address-list.html
+//		// 		th:if="${addressList} == null"
+//		if (list.size() > 0) {
+//			model.addAttribute("addressList", list);
 //		}
 		return "address-detail";
 	}

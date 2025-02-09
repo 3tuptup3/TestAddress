@@ -2,29 +2,99 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>更新確認</title>
+<title>更新内容確認</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 		
-	<h2>更新確認</h2>
+	<h2>更新内容確認</h2>	
+	<p>下記の内容で更新します。</p>
+	<p>よろしいですか？</p>
 
 	<table class="confirm-table" th:object="${addressEditForm}">
 		<tr>
-			<td class="guide">【姓】</td>
+			<td class="guide">姓</td>
 			<td th:text="*{lastName}"></td>
 		</tr>
 		<tr>
-			<td class="guide">【名】</td>
+			<td class="guide">ミドルネーム</td>
+			<td th:text="*{middleName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">名</td>
 			<td th:text="*{firstName}"></td>
 		</tr>
 		<tr>
-			<td class="guide">【通名】</td>
+			<td class="guide">旧姓</td>
+			<td th:text="*{maidenName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">通名</td>
 			<td th:text="*{commonName}"></td>
 		</tr>
 		<tr>
-			<td class="guide">【所属】</td>
+			<td class="guide">姓（かな）</td>
+			<td th:text="*{lastNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">ミドルネーム（かな）</td>
+			<td th:text="*{middleNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">名（かな）</td>
+			<td th:text="*{firstNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">旧姓（かな）</td>
+			<td th:text="*{maidenNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">通名（かな）</td>
+			<td th:text="*{commonNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">電話番号1</td>
+			<td th:text="*{phoneNumber1}"></td>
+		</tr>
+		<tr>
+			<td class="guide">電話番号2</td>
+			<td th:text="*{phoneNumber2}"></td>
+		</tr>
+		<tr>
+			<td class="guide">メールアドレス1</td>
+			<td th:text="*{eMail1}"></td>
+		</tr>
+		<tr>
+			<td class="guide">メールアドレス2</td>
+			<td th:text="*{eMail2}"></td>
+		</tr>
+		<tr>
+			<td class="guide">郵便番号</td>
+			<td th:text="*{postCode}"></td>
+		</tr>
+		<tr>
+			<td class="guide">住所</td>
+			<td th:text="*{address}"></td>
+		</tr>
+		<tr>
+			<td class="guide">所属</td>
 			<td th:text="*{team}"></td>
+		</tr>
+		<tr>
+			<td class="guide">生年月日（年）</td>
+			<td th:text="*{birthYear}"></td>
+		</tr>
+		<tr>
+			<td class="guide">生年月日（月）</td>
+			<td th:text="*{birthMonth}"></td>
+		</tr>
+		<tr>
+			<td class="guide">生年月日（日）</td>
+			<td th:text="*{birthDay}"></td>
+		</tr>
+		<tr>
+			<td class="guide">備考</td>
+			<td th:text="*{remarks}"></td>
 		</tr>
 	</table>	
 
@@ -32,9 +102,26 @@
 			th:object="${addressEditForm}">
     	<input type="hidden" th:field="*{addressId}">
     	<input type="hidden" th:field="*{lastName}">
+    	<input type="hidden" th:field="*{middleName}">
     	<input type="hidden" th:field="*{firstName}">
+    	<input type="hidden" th:field="*{maidenName}">
     	<input type="hidden" th:field="*{commonName}">
+    	<input type="hidden" th:field="*{lastNameKana}">
+    	<input type="hidden" th:field="*{middleNameKana}">
+    	<input type="hidden" th:field="*{firstNameKana}">
+    	<input type="hidden" th:field="*{maidenNameKana}">
+    	<input type="hidden" th:field="*{commonNameKana}">
+    	<input type="hidden" th:field="*{phoneNumber1}">
+    	<input type="hidden" th:field="*{phoneNumber2}">
+    	<input type="hidden" th:field="*{eMail1}">
+    	<input type="hidden" th:field="*{eMail2}">
+    	<input type="hidden" th:field="*{postCode}">
+    	<input type="hidden" th:field="*{address}">
     	<input type="hidden" th:field="*{team}">
+    	<input type="hidden" th:field="*{birthYear}">
+    	<input type="hidden" th:field="*{birthMonth}">
+    	<input type="hidden" th:field="*{birthDay}">
+    	<input type="hidden" th:field="*{remarks}">
     	<input type="submit" value="更新実行" class="btn">
    	</form>
 
@@ -42,9 +129,26 @@
 			th:object="${addressEditForm}">
     	<input type="hidden" th:field="*{addressId}">
     	<input type="hidden" th:field="*{lastName}">
+    	<input type="hidden" th:field="*{middleName}">
     	<input type="hidden" th:field="*{firstName}">
+    	<input type="hidden" th:field="*{maidenName}">
     	<input type="hidden" th:field="*{commonName}">
+    	<input type="hidden" th:field="*{lastNameKana}">
+    	<input type="hidden" th:field="*{middleNameKana}">
+    	<input type="hidden" th:field="*{firstNameKana}">
+    	<input type="hidden" th:field="*{maidenNameKana}">
+    	<input type="hidden" th:field="*{commonNameKana}">
+    	<input type="hidden" th:field="*{phoneNumber1}">
+    	<input type="hidden" th:field="*{phoneNumber2}">
+    	<input type="hidden" th:field="*{eMail1}">
+    	<input type="hidden" th:field="*{eMail2}">
+    	<input type="hidden" th:field="*{postCode}">
+    	<input type="hidden" th:field="*{address}">
     	<input type="hidden" th:field="*{team}">
+    	<input type="hidden" th:field="*{birthYear}">
+    	<input type="hidden" th:field="*{birthMonth}">
+    	<input type="hidden" th:field="*{birthDay}">
+    	<input type="hidden" th:field="*{remarks}">
 <!--    	<input type="hidden" th:field="*{comment}" class="btn">-->
     	<input type="submit" value="もどる" class="btn">
    	</form>
