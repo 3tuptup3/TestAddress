@@ -53,6 +53,10 @@
 			<td th:text="*{commonNameKana}"></td>
 		</tr>
 		<tr>
+			<td class="guide">区分</td>
+			<td th:text="*{category1}"></td>
+		</tr>
+		<tr>
 			<td class="guide">電話番号1</td>
 			<td th:text="*{phoneNumber1}"></td>
 		</tr>
@@ -111,6 +115,7 @@
     	<input type="hidden" th:field="*{firstNameKana}">
     	<input type="hidden" th:field="*{maidenNameKana}">
     	<input type="hidden" th:field="*{commonNameKana}">
+    	<input type="hidden" th:field="*{category1}">
     	<input type="hidden" th:field="*{phoneNumber1}">
     	<input type="hidden" th:field="*{phoneNumber2}">
     	<input type="hidden" th:field="*{eMail1}">
@@ -138,6 +143,7 @@
     	<input type="hidden" th:field="*{firstNameKana}">
     	<input type="hidden" th:field="*{maidenNameKana}">
     	<input type="hidden" th:field="*{commonNameKana}">
+    	<input type="hidden" th:field="*{category1}">
     	<input type="hidden" th:field="*{phoneNumber1}">
     	<input type="hidden" th:field="*{phoneNumber2}">
     	<input type="hidden" th:field="*{eMail1}">

@@ -22,6 +22,9 @@
 	【所属】<br>
    	<input type="text" th:field="*{team}"><br>
 	<br>
+	【区分】<br>
+   	<input type="text" th:field="*{category1}"><br>
+	<br>
    	<input type="submit" value="検索" class="btn"><br>
 </form>
 
@@ -36,7 +39,7 @@
 
 	<table class="address-list">
 		<tr>
-			<th>詳細</th><th>姓</th><th>名</th><th>通名</th><th>所属</th>
+			<th>詳細</th><th>姓</th><th>名</th><th>通名</th><th>所属</th><th>区分</th>
 		</tr>
 		<tr th:each="address : ${addressList}"><td>
 				<form th:action="@{/address-detail}" method="POST">
@@ -74,6 +77,7 @@
 			<td th:text="${address.firstName}"></td>
 			<td th:text="${address.commonName}"></td>
 			<td th:text="${address.team}"></td>
+			<td th:text="${address.category1}"></td>
 		</tr>
 
 	</table>

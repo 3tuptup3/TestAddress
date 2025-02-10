@@ -73,6 +73,7 @@ public class EditController {
 		a.setFirstNameKana(form.getFirstNameKana());
 		a.setMaidenNameKana(form.getMaidenNameKana());
 		a.setCommonNameKana(form.getCommonNameKana());
+		a.setCategory1(form.getCategory1());
 		a.setPhoneNumber1(form.getPhoneNumber1());
 		a.setPhoneNumber2(form.getPhoneNumber2());
 		a.setEMail1(form.getEMail1());

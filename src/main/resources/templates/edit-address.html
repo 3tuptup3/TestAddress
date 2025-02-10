@@ -10,6 +10,9 @@
 	<h2>連絡先編集</h2><form th:action="@{/edit-address}" method="POST">
     <form th:action="@{/edit-address}" method="POST" 
     		th:object="${addressEditForm}">
+		<div th:if="${#fields.hasErrors()}">
+		    <div th:each="err : ${#fields.errors()}" th:text="${err}" class="error-msg"></div>
+		</div>
 		<input type="hidden" name="addressId" th:value="*{addressId}">
 		<table class="edit-table" th:object="${addressEditForm}">
 			<tr>
@@ -17,7 +20,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{lastName}"><br>
-		    		<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -25,7 +28,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{middleName}"><br>
-		    		<div th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -33,7 +36,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{firstName}"><br>
-		    		<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -41,7 +44,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{maidenName}"><br>
-		    		<div th:if="${#fields.hasErrors('maidenName')}" th:errors="*{maidenName}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('maidenName')}" th:errors="*{maidenName}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -49,7 +52,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{commonName}"><br>
-		    		<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -57,7 +60,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{lastNameKana}"><br>
-		    		<div th:if="${#fields.hasErrors('lastNameKana')}" th:errors="*{lastNameKana}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('lastNameKana')}" th:errors="*{lastNameKana}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -65,7 +68,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{middleNameKana}"><br>
-		    		<div th:if="${#fields.hasErrors('middleNameKana')}" th:errors="*{middleNameKana}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('middleNameKana')}" th:errors="*{middleNameKana}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -73,7 +76,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{firstNameKana}"><br>
-		    		<div th:if="${#fields.hasErrors('firstNameKana')}" th:errors="*{firstNameKana}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('firstNameKana')}" th:errors="*{firstNameKana}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -81,7 +84,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{maidenNameKana}"><br>
-		    		<div th:if="${#fields.hasErrors('maidenNameKana')}" th:errors="*{maidenNameKana}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('maidenNameKana')}" th:errors="*{maidenNameKana}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -89,7 +92,15 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{commonNameKana}"><br>
-		    		<div th:if="${#fields.hasErrors('commonNameKana')}" th:errors="*{commonNameKana}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('commonNameKana')}" th:errors="*{commonNameKana}" class="error-msg"></div>-->
+	    		</td>
+			</tr>
+			<tr>
+				<td class="guide">区分</td>
+				<td class="guide">:</td>
+				<td>
+		    		<input type="text" th:field="*{category1}"><br>
+<!--		    		<div th:if="${#fields.hasErrors('commonNameKana')}" th:errors="*{commonNameKana}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -97,7 +108,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{phoneNumber1}"><br>
-		    		<div th:if="${#fields.hasErrors('phoneNumber1')}" th:errors="*{phoneNumber1}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('phoneNumber1')}" th:errors="*{phoneNumber1}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -105,7 +116,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{phoneNumber2}"><br>
-		    		<div th:if="${#fields.hasErrors('phoneNumber2')}" th:errors="*{phoneNumber2}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('phoneNumber2')}" th:errors="*{phoneNumber2}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -113,7 +124,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{eMail1}"><br>
-		    		<div th:if="${#fields.hasErrors('eMail1')}" th:errors="*{eMail1}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('eMail1')}" th:errors="*{eMail1}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -121,7 +132,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{eMail2}"><br>
-		    		<div th:if="${#fields.hasErrors('eMail2')}" th:errors="*{eMail2}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('eMail2')}" th:errors="*{eMail2}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -129,7 +140,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{postCode}"><br>
-		    		<div th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -137,7 +148,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{address}"><br>
-		    		<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -145,7 +156,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{team}"><br>
-		    		<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -153,7 +164,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{birthYear}"><br>
-		    		<div th:if="${#fields.hasErrors('birthYear')}" th:errors="*{birthYear}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('birthYear')}" th:errors="*{birthYear}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -161,7 +172,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{birthMonth}"><br>
-		    		<div th:if="${#fields.hasErrors('birthMonth')}" th:errors="*{birthMonth}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('birthMonth')}" th:errors="*{birthMonth}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -169,7 +180,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{birthDay}"><br>
-		    		<div th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 			<tr>
@@ -177,7 +188,7 @@
 				<td class="guide">:</td>
 				<td>
 		    		<input type="text" th:field="*{remarks}"><br>
-		    		<div th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}" class="error-msg"></div>
+<!--		    		<div th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}" class="error-msg"></div>-->
 	    		</td>
 			</tr>
 		</table>
@@ -185,94 +196,6 @@
     	<input type="submit" value="更新" class="btn">
 	</form>
 
-<!--    <form th:action="@{/edit-address}" method="POST" -->
-<!--    		th:object="${addressEditForm}">-->
-<!--		<input type="hidden" name="addressId" th:value="*{addressId}">-->
-<!--		姓-->
-<!--    	<input type="text" th:field="*{lastName}"><br>-->
-<!--    	<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	ミドルネーム-->
-<!--    	<input type="text" th:field="*{middleName}"><br>-->
-<!--    	<div th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	名-->
-<!--    	<input type="text" th:field="*{firstName}"><br>-->
-<!--    	<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	旧姓-->
-<!--    	<input type="text" th:field="*{maidenName}"><br>-->
-<!--    	<div th:if="${#fields.hasErrors('maidenName')}" th:errors="*{maidenName}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	通名-->
-<!--    	<input type="text" th:field="*{commonName}" class="commonName" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	姓（かな）-->
-<!--    	<input type="text" th:field="*{lastNameKana}" class="lastNameKana" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('lastNameKana')}" th:errors="*{lastNameKana}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	ミドルネーム（かな）-->
-<!--    	<input type="text" th:field="*{middleNameKana}" class="middleNameKana" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('middleNameKana')}" th:errors="*{middleNameKana}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	名（かな）-->
-<!--    	<input type="text" th:field="*{firstNameKana}" class="firstNameKana" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('firstNameKana')}" th:errors="*{firstNameKana}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	旧姓（かな）-->
-<!--    	<input type="text" th:field="*{maidenNameKana}" class="maidenNameKana" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('maidenNameKana')}" th:errors="*{maidenNameKana}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	通名（かな）-->
-<!--    	<input type="text" th:field="*{commonNameKana}" class="commonNameKana" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('commonNameKana')}" th:errors="*{commonNameKana}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	電話番号1-->
-<!--    	<input type="text" th:field="*{phoneNumber1}" class="phoneNumber1" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('phoneNumber1')}" th:errors="*{phoneNumber1}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	電話番号2-->
-<!--    	<input type="text" th:field="*{phoneNumber2}" class="phoneNumber2" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('phoneNumber2')}" th:errors="*{phoneNumber2}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	メールアドレス1-->
-<!--    	<input type="text" th:field="*{eMail1}" class="eMail1" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('eMail1')}" th:errors="*{eMail1}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	メールアドレス2-->
-<!--    	<input type="text" th:field="*{eMail2}" class="eMail2" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('eMail2')}" th:errors="*{eMail2}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	郵便番号-->
-<!--    	<input type="text" th:field="*{postCode}" class="postCode" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	住所-->
-<!--    	<input type="text" th:field="*{address}" class="address" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	所属-->
-<!--    	<input type="text" th:field="*{team}" class="team" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('team')}" th:errors="*{team}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	生年月日-->
-<!--    	<input type="text" th:field="*{birthYear}" class="birthYear" >年<br>-->
-<!--    	<div th:if="${#fields.hasErrors('birthYear')}" th:errors="*{tebirthYearam}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	<input type="text" th:field="*{birthMonth}" class="birthMonth" >月<br>-->
-<!--    	<div th:if="${#fields.hasErrors('birthMonth')}" th:errors="*{birthMonth}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	<input type="text" th:field="*{birthDay}" class="birthDay" >日<br>-->
-<!--    	<div th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	備考-->
-<!--    	<input type="text" th:field="*{remarks}" class="remarks" ><br>-->
-<!--    	<div th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}" class="error-msg"></div>-->
-<!--		<br>-->
-<!--    	<input type="submit" value="更新" class="btn">-->
-<!--    </form>-->
-    
     <br>
     <form th:action="@{/address-detail}" method="POST"
 			th:object="${addressEditForm}">

@@ -63,10 +63,10 @@ public class RemoveController {
 
 		Address a = new Address();
 		a.setAddressId(form.getAddressId());
-		a.setLastName(form.getLastName());
-		a.setFirstName(form.getFirstName());
-		a.setCommonName(form.getCommonName());
-		a.setTeam(form.getTeam());
+//		a.setLastName(form.getLastName());
+//		a.setFirstName(form.getFirstName());
+//		a.setCommonName(form.getCommonName());
+//		a.setTeam(form.getTeam());
 		service.remove(a);
 
 		// フラッシュスコープ

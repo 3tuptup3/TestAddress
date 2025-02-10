@@ -10,5 +10,6 @@ public class AddressSearchForm {
 	private String firstName;
 	private String commonName;
 	private String team;
+	private String category1;
 
 }
