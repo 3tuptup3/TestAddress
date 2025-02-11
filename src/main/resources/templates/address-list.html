@@ -9,27 +9,63 @@
 	
 <h2>連絡先検索</h2>
 <form th:action="@{/address-search}" method="POST" th:object="${addressSearchForm}">
+<!--	<th:object="${addressSearchForm}">-->
 	<!-- 前回の検索条件がそのまま表示される（されない） -->
 	【姓】<br>
    	<input type="text" th:field="*{lastName}"><br>
+<!--   	<input type="text" th:field="${addressSearchForm.lastName}"><br>-->
 	<br>
 	【名】<br>
    	<input type="text" th:field="*{firstName}"><br>
+<!--   	<input type="text" th:field="${addressSearchForm.firstName}"><br>-->
 	<br>
 	【通名】<br>
    	<input type="text" th:field="*{commonName}"><br>
+<!--   	<input type="text" th:field="${addressSearchForm.commonName}"><br>-->
 	<br>
 	【所属】<br>
    	<input type="text" th:field="*{team}"><br>
+<!--   	<input type="text" th:field="${addressSearchForm.team}"><br>-->
 	<br>
 	【区分】<br>
-   	<input type="text" th:field="*{category1}"><br>
+   	<input type="text" th:field="*{category1}">
+<!--   	<input type="text" th:field="${addressSearchForm.category1}">-->
+<!--	<form th:action="@{/category1-search}" method="POST">-->
+<!--	<select name="category1">-->
+<!--		<option th:value="0"></option>-->
+<!--		<option th:each="category : ${categoryList}" th:value="${category}" th:text="${category}"></option>-->
+<!--	</select>-->
+<!--	<form th:action="@{/category1-search}" method="POST">-->
+<!--   		<input type="submit" value="区分検索" class="btn">-->
+<!--	</form>-->
+<!--	<form th:action="@{/category1-search}" method="POST" th:object="${addressSearchForm}">-->
+	    <!-- ドロップダウンメニューにカテゴリーを表示 -->
+<!--	    <select th:field="*{category1}">-->
+<!--	    <select name="category1">-->
+<!--	        <option th:text="0"></option>-->
+<!--	        <option th:text="区分追加"></option>-->
+<!--	        <option th:value="99"></option>-->
+<!--	        <option th:each="category : ${categoryList}" -->
+<!--	        	th:value="${category}"-->
+<!--	        	th:text="${category}"></option>-->
+<!--	    </select>-->
+	    
+<!--	    <input type="submit" value="区分検索" class="btn">-->
+<!--	</form>-->
 	<br>
+	
+<!--<form th:action="@{/address-search}" method="POST" th:object="${addressSearchForm}">-->
+<!--   	<input type="hidden" th:field="*{lastName}">-->
+<!--   	<input type="hidden" th:field="*{firstName}">-->
+<!--   	<input type="hidden" th:field="*{commonName}">-->
+<!--   	<input type="hidden" th:field="*{team}">-->
+<!--   	<input type="hidden" th:field="*{category1}">-->
    	<input type="submit" value="検索" class="btn"><br>
+   	<br>
 </form>
 
 
-<form th:action="@{/show-address-form}" method="POST">
+<form th:action="@{/show-address-form}" method="POST" th:object="${addressSearchForm}">
 	<input type="submit" value="新規登録" class="btn"><br>
 </form>
 

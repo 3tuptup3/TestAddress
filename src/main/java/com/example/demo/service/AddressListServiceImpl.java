@@ -16,24 +16,24 @@ public class AddressListServiceImpl implements AddressListService {
 	
 	private final AddressRepository repository;
 
+	/*--- 連絡先リスト検索 ---*/
 	@Override
-//	public List<Address> findByNameWildcard(String lastName) {
 	public List<Address> findByNameWildcard(AddressSearchForm search) {
 		// errorページテスト
 //		if (restaurantName != null) {
 //			throw new RuntimeException();
 //		}
 		
-//		List<Address> list = repository.selectByNameWildcard(lastName);
 		List<Address> list = repository.selectByNameWildcard(search);
 		
 		return list;
 	}
 
+//	/*--- ドロップダウン（区分）リスト検索 ---*/
 //	@Override
-//	public List<Address> findByAddressId(int addressId) {
-//
-//		List<Address> list = repository.selectByAddressId(addressId);
+//	public List<String> findCategoryList() {
+//		
+//		List<String> list = repository.selectCategoryList();
 //		
 //		return list;
 //	}

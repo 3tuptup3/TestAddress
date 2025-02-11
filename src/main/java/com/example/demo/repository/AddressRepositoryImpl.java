@@ -21,7 +21,6 @@ public class AddressRepositoryImpl implements AddressRepository {
 	
 	/*--- 検索 ---*/
 	@Override
-//	public List<Address> selectByNameWildcard(String lastName) {
 	public List<Address> selectByNameWildcard(AddressSearchForm search) {
 		
 		String sql =
@@ -75,6 +74,12 @@ public class AddressRepositoryImpl implements AddressRepository {
 				"	END) LIKE ? 					" +
 				" AND                   			" +
 				"   (CASE WHEN 						" +
+				"		category1 IS NULL THEN '' 	" +
+				"	ELSE 							" +
+				"		category1 					" +
+				"	END) LIKE ? 					" +
+				" AND                   			" +
+				"   (CASE WHEN 						" +
 				"		team IS NULL THEN '' 		" +
 				"	ELSE 							" +
 				"		team 						" +
@@ -84,6 +89,7 @@ public class AddressRepositoryImpl implements AddressRepository {
 		String pLastName = "%" + search.getLastName() + "%";
 		String pFirstName = "%" + search.getFirstName() + "%";
 		String pCommonName = "%" + search.getCommonName() + "%";
+		String pCategory1 = "%" + search.getCategory1() + "%";
 		String pTeam = "%" + search.getTeam() + "%";
 		
 		// SQLで検索
@@ -91,6 +97,7 @@ public class AddressRepositoryImpl implements AddressRepository {
 				pLastName, 
 				pFirstName, 
 				pCommonName, 
+				pCategory1,
 				pTeam);
 		
 		// 値の取得→結果の格納
@@ -127,6 +134,35 @@ public class AddressRepositoryImpl implements AddressRepository {
 		// 全件分
 		return result;
 	}
+
+
+//	/*--- 区分リスト検索 ---*/
+//	@Override
+//	public List<String> selectCategoryList() {
+//		
+//		String sql =
+//				" SELECT DISTINCT           " +
+//				"   category1               " +
+//				" FROM                  	" +
+//				"   t_address03         	" +
+//				" WHERE                 	" +
+//				"	category1 IS NOT NULL	" ;
+//		
+//		// SQLで検索
+//		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
+//		
+//		// 値の取得→結果の格納
+//		// Map型のListをAddress型のListに変換
+//		List<String> result = new ArrayList<String>();
+////		result.add(null);
+//		for (Map<String, Object> one : list) {
+////			Address address = new Address();
+////			address.setCategory1((String)one.get("category1"));
+//			result.add((String)one.get("category1"));
+//		}
+//		
+//		return result;
+//	}
 
 
 	/*--- 登録 ---*/
@@ -292,5 +328,6 @@ public class AddressRepositoryImpl implements AddressRepository {
 		jdbcTemplate.update(sql, address.getAddressId());
 		
 	}
+
 
 }

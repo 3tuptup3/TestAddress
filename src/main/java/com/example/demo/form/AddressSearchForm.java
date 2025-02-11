@@ -9,7 +9,7 @@ public class AddressSearchForm {
 	private String lastName;
 	private String firstName;
 	private String commonName;
-	private String team;
 	private String category1;
+	private String team;
 
 }

@@ -8,11 +8,10 @@ import com.example.demo.form.AddressSearchForm;
 public interface AddressRepository {
 
 	/*--- 検索 ---*/
-//	List<Address> selectByNameWildcard(String lastName);
 	List<Address> selectByNameWildcard(AddressSearchForm search);
-	
-//	/*--- 詳細画面表示 ---*/
-//	List<Address> selectByAddressId(int addressId);
+
+//	/*--- 区分リスト検索 ---*/
+//	List<String> selectCategoryList();
 
 	/*--- 登録 ---*/
 	void add(Address address);

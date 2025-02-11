@@ -18,7 +18,7 @@ public class LoggingAspect {
 	
 	// 全ての型でcom.example.demo.service配下の全てのクラスの全てのメソッドが対象
 	// 引数は0個～
-	@Before("execution(* com.example.demo.service.*.*(..))")
+	@Before("execution(* com.example.demo.repository.*.*(..))")
 	// joinPoint→com.example.demo.service.*.*
     public void logBefore(JoinPoint joinPoint) {
         outputLog("メソッド開始", joinPoint);

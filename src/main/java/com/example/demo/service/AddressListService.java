@@ -7,11 +7,10 @@ import com.example.demo.form.AddressSearchForm;
 
 public interface AddressListService {
 
-	// 部分一致検索
-//	List<Address> findByNameWildcard(String lastName);
+	/*--- 連絡先リスト検索 ---*/
 	List<Address> findByNameWildcard(AddressSearchForm search);
-	
-//	// 詳細画面表示
-//	List<Address> findByAddressId(int addressId);
+
+//	/*--- ドロップダウン（区分）リスト検索 ---*/
+//	List<String> findCategoryList();
 	
 }
