@@ -8,195 +8,172 @@
 <body>
 <h2>連絡先詳細</h2>
 
-<table class="detail-table" th:object="${addressDetailForm}">
-	<tr>
-		<td class="guide">姓</td>
-		<td class="guide">:</td>
-		<td th:text="*{lastName}"></td>
-	</tr>
-	<tr>
-		<td class="guide">ミドルネーム</td>
-		<td class="guide">:</td>
-		<td th:text="*{middleName}"></td>
-	</tr>
-	<tr>
-		<td class="guide">名</td>
-		<td class="guide">:</td>
-		<td th:text="*{firstName}"></td>
-	</tr>
-	<tr>
-		<td class="guide">旧姓</td>
-		<td class="guide">:</td>
-		<td th:text="*{maidenName}"></td>
-	</tr>
-	<tr>
-		<td class="guide">通名</td>
-		<td class="guide">:</td>
-		<td th:text="*{commonName}"></td>
-	</tr>
-	<tr>
-		<td class="guide">姓（かな）</td>
-		<td class="guide">:</td>
-		<td th:text="*{lastNameKana}"></td>
-	</tr>
-	<tr>
-		<td class="guide">ミドルネーム（かな）</td>
-		<td class="guide">:</td>
-		<td th:text="*{middleNameKana}"></td>
-	</tr>
-	<tr>
-		<td class="guide">名（かな）</td>
-		<td class="guide">:</td>
-		<td th:text="*{lastNameKana}"></td>
-	</tr>
-	<tr>
-		<td class="guide">旧姓（かな）</td>
-		<td class="guide">:</td>
-		<td th:text="*{maidenNameKana}"></td>
-	</tr>
-	<tr>
-		<td class="guide">通名（かな）</td>
-		<td class="guide">:</td>
-		<td th:text="*{commonNameKana}"></td>
-	</tr>
-	<tr>
-		<td class="guide">区分</td>
-		<td class="guide">:</td>
-		<td th:text="*{category1}"></td>
-	</tr>
-	<tr>
-		<td class="guide">電話番号1</td>
-		<td class="guide">:</td>
-		<td th:text="*{phoneNumber1}"></td>
-	</tr>
-	<tr>
-		<td class="guide">電話番号2</td>
-		<td class="guide">:</td>
-		<td th:text="*{phoneNumber2}"></td>
-	</tr>
-	<tr>
-		<td class="guide">メールアドレス1</td>
-		<td class="guide">:</td>
-		<td th:text="*{eMail1}"></td>
-	</tr>
-	<tr>
-		<td class="guide">メールアドレス2</td>
-		<td class="guide">:</td>
-		<td th:text="*{eMail2}"></td>
-	</tr>
-	<tr>
-		<td class="guide">郵便番号</td>
-		<td class="guide">:</td>
-		<td th:text="*{postCode}"></td>
-	</tr>
-	<tr>
-		<td class="guide">住所</td>
-		<td class="guide">:</td>
-		<td th:text="*{address}"></td>
-	</tr>
-	<tr>
-		<td class="guide">所属</td>
-		<td class="guide">:</td>
-		<td th:text="*{team}"></td>
-	</tr>
-	<tr>
-		<td class="guide">生年月日（年）</td>
-		<td class="guide">:</td>
-		<td th:text="*{birthYear}"></td>
-	</tr>
-	<tr>
-		<td class="guide">生年月日（月）</td>
-		<td class="guide">:</td>
-		<td th:text="*{birthMonth}"></td>
-	</tr>
-	<tr>
-		<td class="guide">生年月日（日）</td>
-		<td class="guide">:</td>
-		<td th:text="*{birthDay}"></td>
-	</tr>
-	<tr>
-		<td class="guide">備考</td>
-		<td class="guide">:</td>
-		<td th:text="*{remarks}"></td>
-	</tr>
-	
-</table>
-<!--姓  					<a th:text="*{lastName}"></a><br>-->
-<!--ミドルネーム  			<a th:text="*{middleName}"></a><br>-->
-<!--名  					<a th:text="*{firstName}"></a><br>-->
-<!--旧姓  					<a th:text="*{maidenName}"></a><br>-->
-<!--通名					<a th:text="*{commonName}"></a><br>-->
-<!--姓（かな）  			<a th:text="*{lastNameKana}"></a><br>-->
-<!--ミドルネーム（かな）  	<a th:text="*{middleNameKana}"></a><br>-->
-<!--名（かな）  			<a th:text="*{firstNameKana}"></a><br>-->
-<!--旧姓（かな）  			<a th:text="*{maidenNameKana}"></a><br>-->
-<!--通名（かな）			<a th:text="*{commonNameKana}"></a><br>-->
-<!--区分1  <a th:text="*{category1}"></a><br>-->
-<!--電話番号1  				<a th:text="*{phoneNumber1}"></a><br>-->
-<!--電話番号2  				<a th:text="*{phoneNumber2}"></a><br>-->
-<!--メールアドレス1  		<a th:text="*{eMail1}"></a><br>-->
-<!--メールアドレス2  		<a th:text="*{eMail2}"></a><br>-->
-<!--郵便番号  				<a th:text="*{postCode}"></a><br>-->
-<!--住所  					<a th:text="*{address}"></a><br>-->
-<!--所属					<a th:text="*{team}"></a><br>-->
-<!--生年月日				<a th:text="*{birthYear}">年</a>-->
-<!--						<a th:text="*{birthMonth}">月</a>-->
-<!--						<a th:text="*{birthDay}">日</a><br>-->
-<!--備考					<a th:text="*{remarks}"></a><br>-->
-<!--</div>-->
-<form th:action="@{/show-address-edit-form}" method="POST" th:object="${addressDetailForm}">
-	<input type="hidden" name="addressId" th:value="*{addressId}">
-	<input type="hidden" name="lastName" th:value="*{lastName}">
-	<input type="hidden" name="middleName" th:value="*{middleName}">
-	<input type="hidden" name="firstName" th:value="*{firstName}">
-	<input type="hidden" name="maidenName" th:value="*{maidenName}">
-	<input type="hidden" name="commonName" th:value="*{commonName}">
-	<input type="hidden" name="lastNameKana" th:value="*{lastNameKana}">
-	<input type="hidden" name="middleNameKana" th:value="*{middleNameKana}">
-	<input type="hidden" name="firstNameKana" th:value="*{firstNameKana}">
-	<input type="hidden" name="maidenNameKana" th:value="*{maidenNameKana}">
-	<input type="hidden" name="commonNameKana" th:value="*{commonNameKana}">
-	<input type="hidden" name="category1" th:value="*{category1}">
-	<input type="hidden" name="phoneNumber1" th:value="*{phoneNumber1}">
-	<input type="hidden" name="phoneNumber2" th:value="*{phoneNumber2}">
-	<input type="hidden" name="eMail1" th:value="*{eMail1}">
-	<input type="hidden" name="eMail2" th:value="*{eMail2}">
-	<input type="hidden" name="postCode" th:value="*{postCode}">
-	<input type="hidden" name="address" th:value="*{address}">
-	<input type="hidden" name="team" th:value="*{team}">
-	<input type="hidden" name="birthYear" th:value="*{birthYear}">
-	<input type="hidden" name="birthMonth" th:value="*{birthMonth}">
-	<input type="hidden" name="birthDay" th:value="*{birthDay}">
-	<input type="hidden" name="remarks" th:value="*{remarks}">
-	<input type="submit" value="編集" class="tbtn">
-</form>
-<form th:action="@{/remove-address}" method="POST" th:object="${addressDetailForm}">
-	<input type="hidden" name="addressId" th:value="*{addressId}">
-	<input type="hidden" name="lastName" th:value="*{lastName}">
-	<input type="hidden" name="middleName" th:value="*{middleName}">
-	<input type="hidden" name="firstName" th:value="*{firstName}">
-	<input type="hidden" name="maidenName" th:value="*{maidenName}">
-	<input type="hidden" name="commonName" th:value="*{commonName}">
-	<input type="hidden" name="lastNameKana" th:value="*{lastNameKana}">
-	<input type="hidden" name="middleNameKana" th:value="*{middleNameKana}">
-	<input type="hidden" name="firstNameKana" th:value="*{firstNameKana}">
-	<input type="hidden" name="maidenNameKana" th:value="*{maidenNameKana}">
-	<input type="hidden" name="commonNameKana" th:value="*{commonNameKana}">
-	<input type="hidden" name="category1" th:value="*{category1}">
-	<input type="hidden" name="phoneNumber1" th:value="*{phoneNumber1}">
-	<input type="hidden" name="phoneNumber2" th:value="*{phoneNumber2}">
-	<input type="hidden" name="eMail1" th:value="*{eMail1}">
-	<input type="hidden" name="eMail2" th:value="*{eMail2}">
-	<input type="hidden" name="postCode" th:value="*{postCode}">
-	<input type="hidden" name="address" th:value="*{address}">
-	<input type="hidden" name="team" th:value="*{team}">
-	<input type="hidden" name="birthYear" th:value="*{birthYear}">
-	<input type="hidden" name="birthMonth" th:value="*{birthMonth}">
-	<input type="hidden" name="birthDay" th:value="*{birthDay}">
-	<input type="hidden" name="remarks" th:value="*{remarks}">
-	<input type="submit" value="削除" class="tbtn">
-</form>
-<!--</div>-->
+	<table class="detail-table" th:object="${addressDetailForm}">
+		<tr>
+			<td class="guide">姓</td>
+			<td class="guide">:</td>
+			<td th:text="*{lastName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">ミドルネーム</td>
+			<td class="guide">:</td>
+			<td th:text="*{middleName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">名</td>
+			<td class="guide">:</td>
+			<td th:text="*{firstName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">旧姓</td>
+			<td class="guide">:</td>
+			<td th:text="*{maidenName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">通名</td>
+			<td class="guide">:</td>
+			<td th:text="*{commonName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">姓（かな）</td>
+			<td class="guide">:</td>
+			<td th:text="*{lastNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">ミドルネーム（かな）</td>
+			<td class="guide">:</td>
+			<td th:text="*{middleNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">名（かな）</td>
+			<td class="guide">:</td>
+			<td th:text="*{lastNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">旧姓（かな）</td>
+			<td class="guide">:</td>
+			<td th:text="*{maidenNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">通名（かな）</td>
+			<td class="guide">:</td>
+			<td th:text="*{commonNameKana}"></td>
+		</tr>
+		<tr>
+			<td class="guide">区分</td>
+			<td class="guide">:</td>
+			<td th:text="*{category1}"></td>
+		</tr>
+		<tr>
+			<td class="guide">電話番号1</td>
+			<td class="guide">:</td>
+			<td th:text="*{phoneNumber1}"></td>
+		</tr>
+		<tr>
+			<td class="guide">電話番号2</td>
+			<td class="guide">:</td>
+			<td th:text="*{phoneNumber2}"></td>
+		</tr>
+		<tr>
+			<td class="guide">メールアドレス1</td>
+			<td class="guide">:</td>
+			<td th:text="*{eMail1}"></td>
+		</tr>
+		<tr>
+			<td class="guide">メールアドレス2</td>
+			<td class="guide">:</td>
+			<td th:text="*{eMail2}"></td>
+		</tr>
+		<tr>
+			<td class="guide">郵便番号</td>
+			<td class="guide">:</td>
+			<td th:text="*{postCode}"></td>
+		</tr>
+		<tr>
+			<td class="guide">住所</td>
+			<td class="guide">:</td>
+			<td th:text="*{address}"></td>
+		</tr>
+		<tr>
+			<td class="guide">所属</td>
+			<td class="guide">:</td>
+			<td th:text="*{team}"></td>
+		</tr>
+		<tr>
+			<td class="guide">生年月日（年）</td>
+			<td class="guide">:</td>
+			<td th:text="*{birthYear}"></td>
+		</tr>
+		<tr>
+			<td class="guide">生年月日（月）</td>
+			<td class="guide">:</td>
+			<td th:text="*{birthMonth}"></td>
+		</tr>
+		<tr>
+			<td class="guide">生年月日（日）</td>
+			<td class="guide">:</td>
+			<td th:text="*{birthDay}"></td>
+		</tr>
+		<tr>
+			<td class="guide">備考</td>
+			<td class="guide">:</td>
+			<td th:text="*{remarks}"></td>
+		</tr>
+		
+	</table>
+
+	<form th:action="@{/show-address-edit-form}" method="POST" th:object="${addressDetailForm}">
+		<input type="hidden" name="addressId" th:value="*{addressId}">
+		<input type="hidden" name="lastName" th:value="*{lastName}">
+		<input type="hidden" name="middleName" th:value="*{middleName}">
+		<input type="hidden" name="firstName" th:value="*{firstName}">
+		<input type="hidden" name="maidenName" th:value="*{maidenName}">
+		<input type="hidden" name="commonName" th:value="*{commonName}">
+		<input type="hidden" name="lastNameKana" th:value="*{lastNameKana}">
+		<input type="hidden" name="middleNameKana" th:value="*{middleNameKana}">
+		<input type="hidden" name="firstNameKana" th:value="*{firstNameKana}">
+		<input type="hidden" name="maidenNameKana" th:value="*{maidenNameKana}">
+		<input type="hidden" name="commonNameKana" th:value="*{commonNameKana}">
+		<input type="hidden" name="category1" th:value="*{category1}">
+		<input type="hidden" name="phoneNumber1" th:value="*{phoneNumber1}">
+		<input type="hidden" name="phoneNumber2" th:value="*{phoneNumber2}">
+		<input type="hidden" name="eMail1" th:value="*{eMail1}">
+		<input type="hidden" name="eMail2" th:value="*{eMail2}">
+		<input type="hidden" name="postCode" th:value="*{postCode}">
+		<input type="hidden" name="address" th:value="*{address}">
+		<input type="hidden" name="team" th:value="*{team}">
+		<input type="hidden" name="birthYear" th:value="*{birthYear}">
+		<input type="hidden" name="birthMonth" th:value="*{birthMonth}">
+		<input type="hidden" name="birthDay" th:value="*{birthDay}">
+		<input type="hidden" name="remarks" th:value="*{remarks}">
+		<input type="submit" value="編集" class="tbtn">
+	</form>
+	<form th:action="@{/remove-address}" method="POST" th:object="${addressDetailForm}">
+		<input type="hidden" name="addressId" th:value="*{addressId}">
+		<input type="hidden" name="lastName" th:value="*{lastName}">
+		<input type="hidden" name="middleName" th:value="*{middleName}">
+		<input type="hidden" name="firstName" th:value="*{firstName}">
+		<input type="hidden" name="maidenName" th:value="*{maidenName}">
+		<input type="hidden" name="commonName" th:value="*{commonName}">
+		<input type="hidden" name="lastNameKana" th:value="*{lastNameKana}">
+		<input type="hidden" name="middleNameKana" th:value="*{middleNameKana}">
+		<input type="hidden" name="firstNameKana" th:value="*{firstNameKana}">
+		<input type="hidden" name="maidenNameKana" th:value="*{maidenNameKana}">
+		<input type="hidden" name="commonNameKana" th:value="*{commonNameKana}">
+		<input type="hidden" name="category1" th:value="*{category1}">
+		<input type="hidden" name="phoneNumber1" th:value="*{phoneNumber1}">
+		<input type="hidden" name="phoneNumber2" th:value="*{phoneNumber2}">
+		<input type="hidden" name="eMail1" th:value="*{eMail1}">
+		<input type="hidden" name="eMail2" th:value="*{eMail2}">
+		<input type="hidden" name="postCode" th:value="*{postCode}">
+		<input type="hidden" name="address" th:value="*{address}">
+		<input type="hidden" name="team" th:value="*{team}">
+		<input type="hidden" name="birthYear" th:value="*{birthYear}">
+		<input type="hidden" name="birthMonth" th:value="*{birthMonth}">
+		<input type="hidden" name="birthDay" th:value="*{birthDay}">
+		<input type="hidden" name="remarks" th:value="*{remarks}">
+		<input type="submit" value="削除" class="tbtn">
+	</form>
     <br>
     <a th:href="@{/top}">トップページに戻る</a>
 </body>

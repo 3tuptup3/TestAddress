@@ -27,32 +27,11 @@ public class AddressListController {
 		return "address-list";
 	}
 	
-//	/*--- ドロップダウン（区分）検索リクエスト ---*/
-//	@PostMapping("/category1-search")
-//	private String categorySearch(
-//			@ModelAttribute AddressSearchForm form,
-//			Model model) {
-//	    // デバッグ用: フォームの内容を確認
-//	    System.out.println("Selected Category: " + form.getCategory1());
-//		
-//		List<String> list = service.findCategoryList();
-//		
-//		System.out.println(list);
-//		
-//		model.addAttribute("categoryList", list);
-//	    // 検索フォームデータはそのままフォームに設定した状態でビューに渡す
-//	    model.addAttribute("addressSearchForm", form);
-//		
-//		return "address-list";
-//	}
-	
 	/*--- 検索リクエスト ---*/
 	@PostMapping("/address-search")
 	private String addressSearch(
 			@ModelAttribute AddressSearchForm form,
 			Model model) {
-		
-		System.out.println("姓：" + form.getFirstName());
 		
 		List<Address> list = service.findByNameWildcard(form);
 		
