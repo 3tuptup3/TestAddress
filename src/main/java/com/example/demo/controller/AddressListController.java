@@ -24,7 +24,9 @@ public class AddressListController {
 	@GetMapping("/top")
 	private String addressList(
 			@ModelAttribute AddressSearchForm form) {
+		
 		return "address-list";
+		
 	}
 	
 	/*--- 検索リクエスト ---*/
@@ -34,19 +36,9 @@ public class AddressListController {
 			Model model) {
 		
 		List<Address> list = service.findByNameWildcard(form);
-		
-//		System.out.println(list.size());
-		if(list.size() == 0) {
-			System.out.println("ぬる");
-		}
-		
-		// →address-list.html
-		// 		th:if="${addressList} == null"
 		if (list.size() > 0) {
 			model.addAttribute("addressList", list);
 		}
-		
-//		model.addAttribute("addressList", list);
 		
 		return "address-list";
 		
@@ -56,7 +48,9 @@ public class AddressListController {
 	@PostMapping("/address-detail")
 	private String addressDetail(
 			@ModelAttribute AddressDetailForm form) {
+		
 		return "address-detail";
+	
 	}
 	
 	/*--- 詳細画面表示リクエスト（編集/削除確認画面からの戻り） ---*/
@@ -64,14 +58,8 @@ public class AddressListController {
 	private String addressDetailRet(
 			@ModelAttribute AddressDetailForm form) {
 
-//		List<Address> list = service.findByAddressId(form.getAddressId());
-//		
-//		// →address-list.html
-//		// 		th:if="${addressList} == null"
-//		if (list.size() > 0) {
-//			model.addAttribute("addressList", list);
-//		}
 		return "address-detail";
+
 	}
 
 }
