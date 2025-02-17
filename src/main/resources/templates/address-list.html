@@ -8,36 +8,38 @@
 <body>
 	
 <h2>連絡先検索</h2>
-<form th:action="@{/address-search}" method="POST" th:object="${addressSearchForm}">
-	<!-- 前回の検索条件がそのまま表示される（されない） -->
-	【姓】<br>
-   	<input type="text" th:field="*{lastName}"><br>
-	<br>
-	【名】<br>
-   	<input type="text" th:field="*{firstName}"><br>
-	<br>
-	【通名】<br>
-   	<input type="text" th:field="*{commonName}"><br>
-	<br>
-	【所属】<br>
-   	<input type="text" th:field="*{team}"><br>
-	<br>
-	【区分】<br>
-   	<input type="text" th:field="*{category1}">
-	<br>
+	<form th:action="@{/address-search}" method="POST" th:object="${addressSearchForm}">
+		<!-- 前回の検索条件がそのまま表示される（されない） -->
+		【姓】<br>
+	   	<input type="text" th:field="*{lastName}"><br>
+		<br>
+		【名】<br>
+	   	<input type="text" th:field="*{firstName}"><br>
+		<br>
+		【通名】<br>
+	   	<input type="text" th:field="*{commonName}"><br>
+		<br>
+		【所属】<br>
+	   	<input type="text" th:field="*{team}"><br>
+		<br>
+		【区分】<br>
+	   	<input type="text" th:field="*{category1}">
+		<br>
+		
+	   	<input type="submit" value="検索" class="btn"><br>
+	   	<br>
+	</form>
+
+
+	<form th:action="@{/show-address-form}" method="POST" th:object="${addressSearchForm}">
+		<input type="submit" value="新規登録" class="btn"><br>
+	</form>
 	
-   	<input type="submit" value="検索" class="btn"><br>
-   	<br>
-</form>
-
-
-<form th:action="@{/show-address-form}" method="POST" th:object="${addressSearchForm}">
-	<input type="submit" value="新規登録" class="btn"><br>
-</form>
-
-<!-- ifの内容がTrueの場合divが有効になる（ならない） -->
-<div th:if="${addressList} != null">
-	<h2>検索結果一覧</h2>
+<div th:if="${addressList} == Null" class="error-msg">
+	<p>検索結果は0件です。</p>
+</div>
+<div th:if="${addressList} != Null">
+<h2>検索結果一覧</h2>
 
 	<table class="address-list">
 		<tr>

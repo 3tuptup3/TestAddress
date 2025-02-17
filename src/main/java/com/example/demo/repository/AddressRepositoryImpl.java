@@ -135,36 +135,6 @@ public class AddressRepositoryImpl implements AddressRepository {
 		return result;
 	}
 
-
-//	/*--- 区分リスト検索 ---*/
-//	@Override
-//	public List<String> selectCategoryList() {
-//		
-//		String sql =
-//				" SELECT DISTINCT           " +
-//				"   category1               " +
-//				" FROM                  	" +
-//				"   t_address03         	" +
-//				" WHERE                 	" +
-//				"	category1 IS NOT NULL	" ;
-//		
-//		// SQLで検索
-//		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
-//		
-//		// 値の取得→結果の格納
-//		// Map型のListをAddress型のListに変換
-//		List<String> result = new ArrayList<String>();
-////		result.add(null);
-//		for (Map<String, Object> one : list) {
-////			Address address = new Address();
-////			address.setCategory1((String)one.get("category1"));
-//			result.add((String)one.get("category1"));
-//		}
-//		
-//		return result;
-//	}
-
-
 	/*--- 登録 ---*/
 	@Override
 	public void add(Address address) {

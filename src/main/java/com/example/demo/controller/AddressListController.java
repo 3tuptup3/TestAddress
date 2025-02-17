@@ -35,7 +35,18 @@ public class AddressListController {
 		
 		List<Address> list = service.findByNameWildcard(form);
 		
-		model.addAttribute("addressList", list);
+//		System.out.println(list.size());
+		if(list.size() == 0) {
+			System.out.println("ぬる");
+		}
+		
+		// →address-list.html
+		// 		th:if="${addressList} == null"
+		if (list.size() > 0) {
+			model.addAttribute("addressList", list);
+		}
+		
+//		model.addAttribute("addressList", list);
 		
 		return "address-list";
 		
@@ -45,14 +56,6 @@ public class AddressListController {
 	@PostMapping("/address-detail")
 	private String addressDetail(
 			@ModelAttribute AddressDetailForm form) {
-
-//		List<Address> list = service.findByAddressId(form.getAddressId());
-//		
-//		// →address-list.html
-//		// 		th:if="${addressList} == null"
-//		if (list.size() > 0) {
-//			model.addAttribute("addressList", list);
-//		}
 		return "address-detail";
 	}
 	
