@@ -19,23 +19,10 @@ public class AddressListServiceImpl implements AddressListService {
 	/*--- 連絡先リスト検索 ---*/
 	@Override
 	public List<Address> findByNameWildcard(AddressSearchForm search) {
-		// errorページテスト
-//		if (restaurantName != null) {
-//			throw new RuntimeException();
-//		}
 		
 		List<Address> list = repository.selectByNameWildcard(search);
 		
 		return list;
 	}
-
-//	/*--- ドロップダウン（区分）リスト検索 ---*/
-//	@Override
-//	public List<String> findCategoryList() {
-//		
-//		List<String> list = repository.selectCategoryList();
-//		
-//		return list;
-//	}
-
+	
 }

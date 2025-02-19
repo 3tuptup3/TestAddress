@@ -200,7 +200,7 @@ public class AddressRepositoryImpl implements AddressRepository {
 				 address.getMiddleName(),
 				 address.getFirstName(),
 				 address.getMaidenName(),
-				 address.getCommonNameKana(),
+				 address.getCommonName(),
 				 address.getLastNameKana(),
 				 address.getMiddleNameKana(),
 				 address.getFirstNameKana(),

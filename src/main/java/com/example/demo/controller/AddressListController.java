@@ -36,6 +36,7 @@ public class AddressListController {
 			Model model) {
 		
 		List<Address> list = service.findByNameWildcard(form);
+		
 		if (list.size() > 0) {
 			model.addAttribute("addressList", list);
 		}
